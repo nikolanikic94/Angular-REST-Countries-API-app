@@ -1,0 +1,8 @@
+<div class="country-list">
+  <div class="filters">
+    <app-search (countryNameEmitter)="searchByName($event)"></app-search>
+    <app-filter (filterEmitter)="filterByRegion($event)"></app-filter>
+  </div>
+
+  <app-countries-list [countries]="countries"></app-countries-list>
+</div>

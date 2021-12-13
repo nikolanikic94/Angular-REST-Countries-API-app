@@ -1,0 +1,48 @@
+<div class="country-details">
+  <button mat-raised-button [routerLink]="['/countries']">
+    <i class="fas fa-arrow-left"></i> Back
+  </button>
+
+  <div class="content-box">
+    <div class="img-box">
+      <img src="{{ country.$flags.png || country.$flags.svg }}" alt="" />
+    </div>
+    <div class="details-box">
+      <div class="deatils-box-heading">
+        <h2>{{ country.$name.common }}</h2>
+      </div>
+      <div class="details-box__first">
+        <p>
+          <span class="bold"> Official name:</span> {{ country.$name.official }}
+        </p>
+        <p>
+          <span class="bold"> Population:</span>
+          {{ country.$population | number }}
+        </p>
+        <p><span class="bold"> Region:</span> {{ country.$region }}</p>
+        <p><span class="bold"> Sub region:</span> {{ country.$subregion }}</p>
+        <p><span class="bold"> Capital:</span> {{ country.$capital }}</p>
+      </div>
+      <div class="details-box__second">
+        <p>
+          <span class="bold"> Top Level Domain:</span>
+          {{ country.$tld.join(" | ") }}
+        </p>
+        <p>
+          <span class="bold"> Currencies:</span>
+          {{ currenciesNames.join(", ") }}
+        </p>
+        <p>
+          <span class="bold"> Languages:</span>
+          {{ languages.join(", ") }}
+        </p>
+      </div>
+      <div class="details-box__third">
+        <h3>Border Countries:</h3>
+        <ul *ngFor="let border of borders">
+          <li>{{ border }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

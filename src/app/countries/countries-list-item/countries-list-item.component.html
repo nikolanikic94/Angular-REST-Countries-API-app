@@ -1,0 +1,25 @@
+<mat-card role="country" [routerLink]="['/countries/', country.$name.common]">
+  <img
+    mat-card-image
+    src="{{ country.$flags.png || country.$flags.svg }}"
+    alt="Photo of {{ country.$name }}"
+  />
+
+  <div class="card-description">
+    <mat-card-title>{{ country.$name.common }}</mat-card-title>
+    <mat-card-content>
+      <p>
+        <span style="font-weight: 700">Population: </span>
+        {{ country.$population | number }}
+      </p>
+      <p>
+        <span style="font-weight: 700">Region: </span>
+        {{ country.$region }}
+      </p>
+      <p>
+        <span style="font-weight: 700">Capital: </span>
+        {{ country.$capital }}
+      </p>
+    </mat-card-content>
+  </div>
+</mat-card>

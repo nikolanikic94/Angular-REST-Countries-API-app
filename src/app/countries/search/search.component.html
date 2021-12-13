@@ -1,0 +1,9 @@
+<mat-form-field class="example-form-field" appearance="fill">
+  <mat-label>Search for a country...</mat-label>
+  <input
+    matInput
+    type="text"
+    [(ngModel)]="value"
+    (input)="searchCountryByName()"
+  />
+</mat-form-field>

@@ -1,0 +1,13 @@
+<mat-form-field appearance="fill">
+  <mat-label>Filter by region</mat-label>
+  <select
+    matNativeControl
+    [(ngModel)]="region"
+    name="region"
+    (change)="regionSelect()"
+  >
+    <option *ngFor="let region of regions" [value]="region.name">
+      {{ region.name }}
+    </option>
+  </select>
+</mat-form-field>
